@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useRef} from "react";
 import io from "socket.io-client";
 import './App.css';
+import './setupProxy.js'
 
 
 const App = () => {
@@ -19,7 +20,7 @@ const App = () => {
   const socketRef = useRef();
 
   useEffect(() => {
-    socketRef.current = io.connect('/api', {resource: './setupProxy.js'});
+    socketRef.current = io.connect('/api');
 
     var your_id = "x";
     var users_connected = ([]);

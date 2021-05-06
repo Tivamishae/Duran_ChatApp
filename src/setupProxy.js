@@ -5,7 +5,7 @@ module.exports = function(app) {
     '/api',
     createProxyMiddleware({
       target: 'https://duran-chatapp-backend.herokuapp.com',
-      changeOrigin: true
+      changeOrigin: true,
     })
   );
 };
