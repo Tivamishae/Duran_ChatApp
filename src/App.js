@@ -20,7 +20,7 @@ const App = () => {
   const socketRef = useRef();
 
   useEffect(() => {
-    socketRef.current = io.connect('/api');
+    socketRef.current = io.connect('/api', {resource: "./setupProxy.js"});
 
     var your_id = "x";
     var users_connected = ([]);
