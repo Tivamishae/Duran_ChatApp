@@ -19,7 +19,7 @@ const App = () => {
   const socketRef = useRef();
 
   useEffect(() => {
-    socketRef.current = io.connect('/api/*');
+    socketRef.current = io.connect('https://duran-chatapp-backend.herokuapp.com');
 
     var your_id = "x";
     var users_connected = ([]);
