@@ -260,7 +260,7 @@ const App = () => {
       f.display = "block"
       e.display = "none";
       setShowButtonsBoolean(true);
-      setShow_Hide("Show connected users and show chat");
+      setShow_Hide("Show connected users and hide chat");
     };
 
   }
@@ -280,7 +280,7 @@ const App = () => {
     leave_room_button.visibility = "hidden";
     setMessages([]);
     setMessageButtonFunction(() => () => sendMessageGlobal());
-    setShow_Hide("Show connected users and show chat");
+    setShow_Hide("Show connected users and hide chat");
     setShowButtonsBoolean(true);
     document.getElementById("chat_paragraph").innerHTML = ("Global chat");
   }
