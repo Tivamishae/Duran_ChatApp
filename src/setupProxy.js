@@ -1,4 +1,5 @@
-const proxy = require("http-proxy-middleware");
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
 module.exports = app => {
-  app.use(proxy("/api/*", { target: "https://duran-chatapp-backend.herokuapp.com/" }));
+  app.use(createProxyMiddleware("/api/*", { target: "https://duran-chatapp-backend.herokuapp.com/" }));
 };
