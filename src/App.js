@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef} from "react";
 import io from "socket.io-client";
 import './App.css';
 
+
 const App = () => {
   const [yourID, setYourID] = useState();
   const [message, setMessage] = useState("");
@@ -18,7 +19,7 @@ const App = () => {
   const socketRef = useRef();
 
   useEffect(() => {
-    socketRef.current = io.connect('/');
+    socketRef.current = io.connect('/api/*');
 
     var your_id = "x";
     var users_connected = ([]);
@@ -32,7 +33,6 @@ const App = () => {
     })
 
     socketRef.current.on("set are_you_in_room to false", socket => {
-      debugger;
       are_you_in_room = (false);
     })
 
