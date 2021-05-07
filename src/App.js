@@ -59,8 +59,19 @@ const App = () => {
     })
 
     socketRef.current.on("new_user", id => {
-      newUser(id);
-      users_connected.push(id);
+      var userVariable = 0;
+      const arrayLength = users_connected.length;
+      for (var i = 0; i < arrayLength; i++) {
+        if (users_connected[i] === id) {
+          userVariable =+ 1;
+        }
+        
+      }
+      if ((!userVariable > 0)) {
+        newUser(id);
+        users_connected.push(id);
+
+      }
     })
 
     socketRef.current.on("another_user_room_request", a => {
