@@ -20,7 +20,10 @@ const App = () => {
   const socketRef = useRef();
 
   useEffect(() => {
-    socketRef.current = io.connect('/api', {resource: "./setupProxy.js"});
+    socketRef.current = socketIOClient('/', {
+      transports: ['websocket'],
+      path: '/socket',
+    });
 
     var your_id = "x";
     var users_connected = ([]);
