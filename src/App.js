@@ -20,7 +20,7 @@ const App = () => {
   const socketRef = useRef();
 
   useEffect(() => {
-    socketRef.current = socketIOClient('/', {
+    socketRef.current = io.connect('/', {
       transports: ['websocket'],
       path: '/socket',
     });
